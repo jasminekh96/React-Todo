@@ -2,7 +2,12 @@ import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 import '../src/components/TodoComponents/Todo.css';
-import { throwStatement } from '@babel/types';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+	color: #e6e6fa;
+	font-family: 'Shadows Into Light', cursive;
+`;
 
 const data = [
 	{
@@ -65,7 +70,7 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<div className='header'>
-					<h2>ToDo List!</h2>
+					<Title>ToDo List!</Title>
 					<TodoForm addItem={this.addItem} />
 				</div>
 				<TodoList toggleCompleted={this.toggleCompleted} todo={this.state.todo} setFiltered={this.setFiltered} />
